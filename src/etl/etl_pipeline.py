@@ -24,6 +24,8 @@ from datetime import datetime
 from typing import Dict, List, Tuple
 import os
 from dotenv import load_dotenv
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 load_dotenv()
 
@@ -81,10 +83,10 @@ class ETLPipeline:
         try:
             self.conn = psycopg2.connect(self.db_url)
             self.cursor = self.conn.cursor()
-            logger.info("✅ Connected to PostgreSQL")
+            logger.info("[OK] Connected to PostgreSQL")
             return True
         except Exception as e:
-            logger.error(f"❌ Database connection failed: {e}")
+            logger.error(f"[ERROR] Database connection failed: {e}")
             return False
     
     def close_db(self):
@@ -105,18 +107,45 @@ class ETLPipeline:
             logger.info(f"Extracting from CSV: {file_path}")
             df = pd.read_csv(file_path)
             self.log_data['records_extracted'] = len(df)
-            logger.info(f"✅ Extracted {len(df)} rows from CSV")
+            logger.info(f"[OK] Extracted {len(df)} rows from CSV")
             return df
         except Exception as e:
-            logger.error(f"❌ CSV extraction failed: {e}")
+            logger.error(f"[ERROR] CSV extraction failed: {e}")
             self.log_data['errors'].append(str(e))
             return None
     
-    def extract_from_google_sheets(self, spreadsheet_id: str, range_name: str):
+    def extract_from_google_sheets(self, spreadsheet_id: str, sheet_name: str):
         """Extract data from Google Sheets (requires API setup)"""
         # Implement using Google Sheets API
         # For now, using CSV as placeholder
-        pass
+        try:
+            logger.info(f"Connecting to Google Sheet: {spreadsheet_id}")
+            
+            # Define scope
+            scope = [
+                "https://spreadsheets.google.com/feeds",
+                "https://www.googleapis.com/auth/drive"
+            ]
+            
+            # Authenticate using credentials.json
+            creds = ServiceAccountCredentials.from_json_keyfile_name('config/credentials.json', scope)
+            client = gspread.authorize(creds)
+            
+            # Open sheet
+            sheet = client.open_by_key(spreadsheet_id).worksheet(sheet_name)
+            
+            # Get all records
+            data = sheet.get_all_records()
+            df = pd.DataFrame(data)
+            
+            self.log_data['records_extracted'] = len(df)
+            logger.info(f"[OK] Extracted {len(df)} rows from Sheet '{sheet_name}'")
+            return df
+            
+        except Exception as e:
+            logger.error(f"[ERROR] Google Sheet extraction failed: {e}")
+            self.log_data['errors'].append(str(e))
+            return None
     
     # ============================================
     # TRANSFORM PHASE
@@ -185,7 +214,7 @@ class ETLPipeline:
         df = df.drop_duplicates(subset=['email'], keep='first')
         duplicates_removed = original_count - len(df)
         if duplicates_removed > 0:
-            logger.warning(f"⚠️  Removed {duplicates_removed} duplicate records")
+            logger.warning(f"[WARN]  Removed {duplicates_removed} duplicate records")
         
         # Step 2: Handle missing values
         df['name'] = df['name'].fillna('Unknown')
@@ -209,7 +238,7 @@ class ETLPipeline:
         
         df_valid = pd.DataFrame(valid_rows)
         self.log_data['records_transformed'] = len(df_valid)
-        logger.info(f"✅ Transformed {len(df_valid)} valid student records")
+        logger.info(f"[OK] Transformed {len(df_valid)} valid student records")
         
         return df_valid
     
@@ -233,7 +262,7 @@ class ETLPipeline:
         
         df_valid = pd.DataFrame(valid_rows)
         self.log_data['records_transformed'] = len(df_valid)
-        logger.info(f"✅ Transformed {len(df_valid)} valid course records")
+        logger.info(f"[OK] Transformed {len(df_valid)} valid course records")
         
         return df_valid
     
@@ -266,7 +295,7 @@ class ETLPipeline:
         
         self.conn.commit()
         self.log_data['records_loaded'] = inserted
-        logger.info(f"✅ Loaded {inserted} students successfully")
+        logger.info(f"[OK] Loaded {inserted} students successfully")
         return inserted
     
     def load_courses(self, df: pd.DataFrame) -> int:
@@ -291,7 +320,7 @@ class ETLPipeline:
         
         self.conn.commit()
         self.log_data['records_loaded'] = inserted
-        logger.info(f"✅ Loaded {inserted} courses successfully")
+        logger.info(f"[OK] Loaded {inserted} courses successfully")
         return inserted
     
     # ============================================
@@ -331,11 +360,11 @@ class ETLPipeline:
                 self.load_courses(df_transformed)
             
             self.log_data['status'] = 'success'
-            logger.info("✅ ETL Pipeline completed successfully")
+            logger.info("[OK] ETL Pipeline completed successfully")
             
         except Exception as e:
             self.log_data['status'] = 'failed'
-            logger.error(f"❌ ETL Pipeline failed: {e}")
+            logger.error(f"[ERROR] ETL Pipeline failed: {e}")
             
         finally:
             self.close_db()
