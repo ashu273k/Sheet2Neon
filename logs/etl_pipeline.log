@@ -23,3 +23,64 @@
 2025-12-16 11:30:55,128 - INFO - [SUCCESS] ETL Pipeline completed successfully
 2025-12-16 11:30:55,129 - INFO - Database connection closed
 2025-12-16 11:30:55,130 - INFO - Log saved to D:\Projects\Internship\Sheet2Neon\Sheet2Neon\logs\etl_log.json
+2025-12-16 12:03:20,815 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:03:20,822 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:04:24,031 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:04:24,036 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:06:43,424 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:06:43,436 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:07:11,758 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:07:13,294 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:07:44,053 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:07:45,309 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:10:29,476 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:10:31,316 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:44:28,919 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:44:31,289 - INFO - Transforming student data...
+2025-12-16 12:44:31,299 - INFO - Loading 4 students into database...
+2025-12-16 12:44:31,299 - ERROR - Row 0 insert failed: 'NoneType' object has no attribute 'execute'
+2025-12-16 12:44:31,300 - ERROR - Row 1 insert failed: 'NoneType' object has no attribute 'execute'
+2025-12-16 12:44:31,300 - ERROR - Row 2 insert failed: 'NoneType' object has no attribute 'execute'
+2025-12-16 12:44:31,301 - ERROR - Row 3 insert failed: 'NoneType' object has no attribute 'execute'
+2025-12-16 12:45:09,863 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:45:12,103 - INFO - Transforming student data...
+2025-12-16 12:45:12,117 - INFO - Loading 4 students into database...
+2025-12-16 12:45:13,516 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:45:16,632 - INFO - Transforming course data...
+2025-12-16 12:45:16,640 - INFO - Loading 3 courses into database...
+2025-12-16 12:45:17,743 - INFO - Database connection closed
+2025-12-16 12:46:05,765 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:46:08,029 - INFO - Transforming student data...
+2025-12-16 12:46:08,043 - INFO - Loading 4 students into database...
+2025-12-16 12:46:09,513 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:46:11,609 - INFO - Transforming course data...
+2025-12-16 12:46:11,615 - INFO - Loading 3 courses into database...
+2025-12-16 12:46:12,810 - INFO - Database connection closed
+2025-12-16 12:50:32,797 - INFO - [OK] Connected to PostgreSQL
+2025-12-16 12:50:32,798 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:50:35,485 - INFO - [OK] Extracted 4 rows from Sheet 'Students'
+2025-12-16 12:50:35,488 - INFO - Transforming student data...
+2025-12-16 12:50:35,497 - INFO - [OK] Transformed 4 valid student records
+2025-12-16 12:50:35,497 - INFO - Loading 4 students into database...
+2025-12-16 12:50:36,938 - INFO - [OK] Loaded 0 students successfully
+2025-12-16 12:50:36,939 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:50:39,089 - INFO - [OK] Extracted 3 rows from Sheet 'Courses'
+2025-12-16 12:50:39,092 - INFO - Transforming course data...
+2025-12-16 12:50:39,096 - INFO - [OK] Transformed 3 valid course records
+2025-12-16 12:50:39,096 - INFO - Loading 3 courses into database...
+2025-12-16 12:50:40,331 - INFO - [OK] Loaded 0 courses successfully
+2025-12-16 12:50:40,332 - INFO - Database connection closed
+2025-12-16 12:53:27,299 - INFO - [OK] Connected to PostgreSQL
+2025-12-16 12:53:27,300 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:53:29,619 - INFO - [OK] Extracted 5 rows from Sheet 'Students'
+2025-12-16 12:53:29,622 - INFO - Transforming student data...
+2025-12-16 12:53:29,631 - INFO - [OK] Transformed 5 valid student records
+2025-12-16 12:53:29,631 - INFO - Loading 5 students into database...
+2025-12-16 12:53:31,345 - INFO - [OK] Loaded 1 students successfully
+2025-12-16 12:53:31,346 - INFO - Connecting to Google Sheet: 1nGcvMwxvBfbb6K76ZSca5FinArcD_mLcg0wrOPbHE64
+2025-12-16 12:53:34,194 - INFO - [OK] Extracted 3 rows from Sheet 'Courses'
+2025-12-16 12:53:34,197 - INFO - Transforming course data...
+2025-12-16 12:53:34,201 - INFO - [OK] Transformed 3 valid course records
+2025-12-16 12:53:34,202 - INFO - Loading 3 courses into database...
+2025-12-16 12:53:35,314 - INFO - [OK] Loaded 0 courses successfully
+2025-12-16 12:53:35,315 - INFO - Database connection closed
