@@ -1,0 +1,9 @@
+code,name,department_id,credits
+CS101,Introduction to Programming,1,4
+CS201,Data Structures,1,4
+CS301,Database Systems,1,3
+CS401,Machine Learning,1,4
+ME101,Mechanics,2,3
+EE101,Circuit Theory,4,4
+INVALID,,1,2
+CS999,Bad Course,1,0

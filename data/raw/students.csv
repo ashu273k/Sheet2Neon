@@ -1,0 +1,10 @@
+name,email,year,department_id
+Aarav Sharma,aarav.sharma@college.edu,2,1
+Priya Kapoor,priya.kapoor@college.edu,2,1
+Rohan Verma,rohan.verma@college.edu,3,1
+Nidhi Reddy,nidhi.reddy@college.edu,1,2
+Sanjay Kumar,sanjay.kumar@college.edu,4,3
+Divya Iyer,divya.iyer@college.edu,2,4
+,invalid@test.com,5,1
+Duplicate User,duplicate@test.com,2,1
+Duplicate User,duplicate@test.com,2,1
