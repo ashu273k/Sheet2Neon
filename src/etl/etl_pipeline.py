@@ -35,11 +35,18 @@ if sys.platform.startswith('win'):
 # ============================================
 # LOGGING SETUP
 # ============================================
+# Get the project root directory (two levels up from current file)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+LOG_FILE = os.path.join(PROJECT_ROOT, 'logs', 'etl_pipeline.log')
+
+# Ensure logs directory exists
+os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/etl_pipeline.log'),
+        logging.FileHandler(LOG_FILE),
         logging.StreamHandler()  # Also print to console
     ]
 )
@@ -349,9 +356,9 @@ if __name__ == "__main__":
     pipeline = ETLPipeline()
     
     # Run ETL for students
-    # pipeline.run_etl('data/raw/students.csv', entity_type='students')
+    pipeline.run_etl('data/raw/students.csv', entity_type='students')
     
     # Run ETL for courses
-    # pipeline.run_etl('data/raw/courses.csv', entity_type='courses')
+    pipeline.run_etl('data/raw/courses.csv', entity_type='courses')
     
     print("ETL Pipeline ready. Configure source files and run above commands.")

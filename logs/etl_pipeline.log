@@ -1,0 +1,25 @@
+2025-12-16 11:29:18,203 - INFO - Extracting from CSV: data/raw/students.csv
+2025-12-16 11:29:18,264 - INFO - Database connection closed
+2025-12-16 11:30:49,691 - INFO - [SUCCESS] Connected to PostgreSQL
+2025-12-16 11:30:49,692 - INFO - Extracting from CSV: D:\Projects\Internship\Sheet2Neon\Sheet2Neon\data/raw/students.csv
+2025-12-16 11:30:49,699 - INFO - [SUCCESS] Extracted 9 rows from CSV
+2025-12-16 11:30:49,700 - INFO - Transforming student data...
+2025-12-16 11:30:49,701 - WARNING - ⚠️  Removed 1 duplicate records
+2025-12-16 11:30:49,712 - WARNING - Row 6 invalid: Invalid year: 5 (must be 1-4)
+2025-12-16 11:30:49,715 - INFO - [SUCCESS] Transformed 7 valid student records
+2025-12-16 11:30:49,716 - INFO - Loading 7 students into database...
+2025-12-16 11:30:51,725 - INFO - [SUCCESS] Loaded 0 students successfully
+2025-12-16 11:30:51,726 - INFO - [SUCCESS] ETL Pipeline completed successfully
+2025-12-16 11:30:51,727 - INFO - Database connection closed
+2025-12-16 11:30:51,730 - INFO - Log saved to D:\Projects\Internship\Sheet2Neon\Sheet2Neon\logs\etl_log.json
+2025-12-16 11:30:53,082 - INFO - [SUCCESS] Connected to PostgreSQL
+2025-12-16 11:30:53,084 - INFO - Extracting from CSV: D:\Projects\Internship\Sheet2Neon\Sheet2Neon\data/raw/courses.csv
+2025-12-16 11:30:53,087 - INFO - [SUCCESS] Extracted 8 rows from CSV
+2025-12-16 11:30:53,087 - INFO - Transforming course data...
+2025-12-16 11:30:53,094 - WARNING - Row 7 invalid: Invalid credits: 0 (must be 1-4)
+2025-12-16 11:30:53,095 - INFO - [SUCCESS] Transformed 7 valid course records
+2025-12-16 11:30:53,096 - INFO - Loading 7 courses into database...
+2025-12-16 11:30:55,127 - INFO - [SUCCESS] Loaded 0 courses successfully
+2025-12-16 11:30:55,128 - INFO - [SUCCESS] ETL Pipeline completed successfully
+2025-12-16 11:30:55,129 - INFO - Database connection closed
+2025-12-16 11:30:55,130 - INFO - Log saved to D:\Projects\Internship\Sheet2Neon\Sheet2Neon\logs\etl_log.json
