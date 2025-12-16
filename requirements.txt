@@ -1,0 +1,10 @@
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+pytest
+pytest-cov
+psycopg2-binary
+sqlalchemy
+pandas
+python-dotenv
+requests
